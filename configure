@@ -1584,6 +1584,7 @@ EXTERNAL_LIBRARY_LIST="
     libzvbi
     mediacodec
     netcdf
+    nvresize
     openal
     opencl
     opengl
@@ -1596,7 +1597,6 @@ HWACCEL_AUTODETECT_LIBRARY_LIST="
     d3d11va
     dxva2
     nvenc
-    nvresize
     vaapi
     vda
     vdpau
