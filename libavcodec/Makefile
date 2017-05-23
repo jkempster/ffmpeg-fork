@@ -343,8 +343,8 @@ OBJS-$(CONFIG_HEVC_DECODER)            += hevcdec.o hevc_mvs.o \
                                           hevcdsp.o hevc_filter.o hevc_data.o
 OBJS-$(CONFIG_HEVC_CUVID_DECODER)      += cuvid.o
 OBJS-$(CONFIG_HEVC_MEDIACODEC_DECODER) += mediacodecdec.o
-OBJS-$(CONFIG_HEVC_NVENC_ENCODER)      += nvenc_hevc.o
-OBJS-$(CONFIG_NVENC_HEVC_ENCODER)      += nvenc_hevc.o
+#OBJS-$(CONFIG_HEVC_NVENC_ENCODER)      += nvenc_hevc.o
+#OBJS-$(CONFIG_NVENC_HEVC_ENCODER)      += nvenc_hevc.o
 OBJS-$(CONFIG_HEVC_QSV_DECODER)        += qsvdec_h2645.o
 OBJS-$(CONFIG_HEVC_QSV_ENCODER)        += qsvenc_hevc.o hevc_ps_enc.o       \
                                           hevc_data.o
