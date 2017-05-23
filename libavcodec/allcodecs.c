@@ -636,7 +636,7 @@ void avcodec_register_all(void)
     REGISTER_ENCDEC (LIBOPENH264,       libopenh264);
     REGISTER_DECODER(H263_CUVID,        h263_cuvid);
     REGISTER_DECODER(H264_CUVID,        h264_cuvid);
-    REGISTER_ENCODER(H264_NVENC,        h264_nvenc);
+    //REGISTER_ENCODER(H264_NVENC,        h264_nvenc);
     REGISTER_ENCODER(H264_OMX,          h264_omx);
     REGISTER_ENCODER(H264_QSV,          h264_qsv);
     REGISTER_ENCODER(H264_VAAPI,        h264_vaapi);
@@ -648,7 +648,7 @@ void avcodec_register_all(void)
 #endif
     REGISTER_DECODER(HEVC_CUVID,        hevc_cuvid);
     REGISTER_DECODER(HEVC_MEDIACODEC,   hevc_mediacodec);
-    REGISTER_ENCODER(HEVC_NVENC,        hevc_nvenc);
+    //REGISTER_ENCODER(HEVC_NVENC,        hevc_nvenc);
     REGISTER_ENCODER(HEVC_QSV,          hevc_qsv);
     REGISTER_ENCODER(HEVC_VAAPI,        hevc_vaapi);
     REGISTER_ENCODER(LIBKVAZAAR,        libkvazaar);
