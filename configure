@@ -6139,11 +6139,11 @@ else
 fi
 
 enabled nvenc             && { check_header nvEncodeAPI.h || die "ERROR: nvEncodeAPI.h not found."; } &&
-                             { check_lib 'cudautils.h' init_cuda -lcudautils -ldl || die "ERROR: libcudautils not found."; } &&
+                             { check_lib init_cuda 'cudautils.h' init_cuda -lcudautils -ldl || die "ERROR: libcudautils not found."; } &&
                              { check_cpp_condition nvEncodeAPI.h "NVENCAPI_MAJOR_VERSION >= 5" ||
                                die "ERROR: NVENC API version 4 or older is not supported"; } &&
                              { [ $target_os != cygwin ] || die "ERROR: NVENC is not supported on Cygwin currently."; }
-enabled nvresize          && { check_lib 'cudautils.h' init_cuda -lcudautils -ldl || die "ERROR: libcudautils not found."; } &&
+enabled nvresize          && { check_lib init_cuda 'cudautils.h' init_cuda -lcudautils -ldl || die "ERROR: libcudautils not found."; } &&
 
 
 # Funny iconv installations are not unusual, so check it after all flags have been set
