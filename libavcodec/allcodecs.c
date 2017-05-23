@@ -643,8 +643,8 @@ void avcodec_register_all(void)
     REGISTER_ENCODER(H264_VIDEOTOOLBOX, h264_videotoolbox);
 #if FF_API_NVENC_OLD_NAME
     REGISTER_ENCODER(NVENC,             nvenc);
-    REGISTER_ENCODER(NVENC_H264,        nvenc_h264);
-    REGISTER_ENCODER(NVENC_HEVC,        nvenc_hevc);
+    //REGISTER_ENCODER(NVENC_H264,        nvenc_h264);
+    //REGISTER_ENCODER(NVENC_HEVC,        nvenc_hevc);
 #endif
     REGISTER_DECODER(HEVC_CUVID,        hevc_cuvid);
     REGISTER_DECODER(HEVC_MEDIACODEC,   hevc_mediacodec);
