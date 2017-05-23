@@ -305,6 +305,8 @@ External library support:
   --enable-libnpp          enable Nvidia Performance Primitives-based code [no]
   --enable-mmal            enable Broadcom Multi-Media Abstraction Layer (Raspberry Pi) via MMAL [no]
   --disable-nvenc          disable Nvidia video encoding code [autodetect]
+  --enable-nvresize        enable NVIDIA CUDA accelerated resizer [no]
+
   --enable-omx             enable OpenMAX IL code [no]
   --enable-omx-rpi         enable OpenMAX IL code for Raspberry Pi [no]
   --disable-vaapi          disable Video Acceleration API (mainly Unix/Intel) code [autodetect]
