@@ -1594,6 +1594,7 @@ HWACCEL_AUTODETECT_LIBRARY_LIST="
     d3d11va
     dxva2
     nvenc
+    nvresize
     vaapi
     vda
     vdpau
@@ -5537,6 +5538,8 @@ ladspa_filter_extralibs='$ldl'
 nvenc_extralibs='$ldl'
 coreimage_filter_extralibs="-framework QuartzCore -framework AppKit -framework OpenGL"
 coreimagesrc_filter_extralibs="-framework QuartzCore -framework AppKit -framework OpenGL"
+nvenc_encoder_extralibs='$ldl $lcudautils'
+nvresize_filter_extralibs='$ldl $lcudautils'
 
 if ! disabled network; then
     check_func getaddrinfo $network_extralibs
@@ -6135,13 +6138,13 @@ else
     disable cuda cuvid nvenc
 fi
 
-enabled nvenc &&
-    check_cc -I$source_path <<EOF || disable nvenc
-#include "compat/nvenc/nvEncodeAPI.h"
-NV_ENCODE_API_FUNCTION_LIST flist;
-void f(void) { struct { const GUID guid; } s[] = { { NV_ENC_PRESET_HQ_GUID } }; }
-int main(void) { return 0; }
-EOF
+enabled nvenc             && { check_header nvEncodeAPI.h || die "ERROR: nvEncodeAPI.h not found."; } &&
+                             { check_lib 'cudautils.h' init_cuda -lcudautils -ldl || die "ERROR: libcudautils not found."; } &&
+                             { check_cpp_condition nvEncodeAPI.h "NVENCAPI_MAJOR_VERSION >= 5" ||
+                               die "ERROR: NVENC API version 4 or older is not supported"; } &&
+                             { [ $target_os != cygwin ] || die "ERROR: NVENC is not supported on Cygwin currently."; }
+enabled nvresize          && { check_lib 'cudautils.h' init_cuda -lcudautils -ldl || die "ERROR: libcudautils not found."; } &&
+
 
 # Funny iconv installations are not unusual, so check it after all flags have been set
 disabled iconv || check_func_headers iconv.h iconv || check_lib iconv iconv.h iconv -liconv
