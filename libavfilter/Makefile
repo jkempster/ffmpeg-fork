@@ -48,6 +48,7 @@ OBJS-$(CONFIG_AMETADATA_FILTER)              += f_metadata.o
 OBJS-$(CONFIG_AMIX_FILTER)                   += af_amix.o
 OBJS-$(CONFIG_ANEQUALIZER_FILTER)            += af_anequalizer.o
 OBJS-$(CONFIG_ANULL_FILTER)                  += af_anull.o
+OBJS-$(CONFIG_NVRESIZE_FILTER)               += vf_nvresize.o vf_nvresize_ptx.o
 OBJS-$(CONFIG_APAD_FILTER)                   += af_apad.o
 OBJS-$(CONFIG_APERMS_FILTER)                 += f_perms.o
 OBJS-$(CONFIG_APHASER_FILTER)                += af_aphaser.o generate_wave_table.o
